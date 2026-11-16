@@ -1,0 +1,19 @@
+.contenedorB {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedorH {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contenedorV {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
