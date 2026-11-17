@@ -1,5 +1,8 @@
 :root {
-    --c-background:#hola;
-    --c-links:#000000;
-    --c-debug:#ee1414;
+    --c1-background: rgb(245, 245, 245);
+    --c2-background: rgb(102, 149, 35);
+    --c-titulos: rgb(36, 83, 41);
+    --c-detalles: rgb(239, 232, 66);
+    --c-botones: rgb(149, 89, 16);
+    --c-debug: rgb(255, 0, 0);
 }
