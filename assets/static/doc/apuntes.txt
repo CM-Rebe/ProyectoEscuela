@@ -1,0 +1,115 @@
+
+1. Contexto y Problemática
+
+Cuando se acercan las mesas de examen o las 
+entregas de taller en la escuela técnica, 
+conseguir buenos resúmenes de materias 
+complejas (como Análisis Matemático, Física, 
+Redes o Programación) suele ser difícil. 
+Además, muchos estudiantes buscan compañeros 
+para juntarse a repasar pero no tienen un 
+espacio centralizado para organizarse.
+
+El objetivo es desarrollar una aplicación
+web local que funcione como repositorio 
+colaborativo de apuntes y organizador de 
+grupos de estudio para los alumnos de la escuela.
+
+2. Requisitos Funcionales (Lo que el sistema DEBE hacer)
+
+Módulo A: Usuarios y Roles
+
+Registro e Inicio de Sesión: Los estudiantes deben
+poder crearse una cuenta con su nombre, apellido, 
+curso (ej. ), email y contraseña.
+Perfil de Usuario: Cada estudiante debe poder ver 
+qué apuntes subió y a qué grupos de estudio está anotado.
+
+Módulo B: Repositorio de Apuntes
+
+Subida de Material: Un usuario logueado puede publicar 
+un apunte completando: título, descripción breve, 
+materia, año al que corresponde y adjuntando el 
+archivo (PDF o imagen) o enlace de descarga.
+Explorador y Buscador: Pantalla principal donde se 
+listan todos los apuntes disponibles. Debe permitir 
+filtrar por materia y buscar por palabras clave en el título.
+Sistema de Valoración (Votos): Los alumnos pueden 
+darle "Me sirvió" (voto positivo) a los apuntes 
+útiles. Un usuario no puede votar dos veces el 
+mismo apunte.
+
+Módulo C: Grupos de Estudio
+
+Crear Convocatoria: Cualquier alumno puede armar un
+grupo de estudio indicando: materia, tema a repasar,
+fecha, hora, lugar (ej. , , ) y cupo máximo de integrantes.
+Inscripción: Otros alumnos pueden sumarse al grupo
+con un clic. El sistema debe descontar los lugares 
+disponibles y bloquear la inscripción cuando el 
+cupo llegue a cero.
+
+Módulo D: Ranking Colaborativo (Gamificación)
+
+Una sección que muestre el Top 5 de estudiantes 
+que más aportan, calculado automáticamente según 
+la cantidad de apuntes subidos y los votos positivos 
+recibidos.
+
+3. Requisitos Técnicos y de Base de Datos
+
+Diseño de Base de Datos (DER): Antes de programar, deben 
+entregar el Diagrama Entidad-Relación en papel o 
+formato digital aprobado por el docente. 
+
+Estructura en phpMyAdmin: 
+
+La base de datos debe 
+estar normalizada y contar con claves primarias 
+(PK), claves foráneas (FK) e integridad referencial. 
+
+Validaciones en Frontend (JavaScript):
+
+Validar que no se envíen formularios vacíos.
+Validar que no se creen grupos de estudio con fechas 
+pasadas o cupos menores a 2 personas.
+Implementar un buscador dinámico que filtre los 
+resultados en pantalla sin necesidad de recargar 
+toda la página.
+
+Diseño Responsivo (CSS3): 
+
+La interfaz debe verse 
+bien tanto en las computadoras del laboratorio 
+como en la pantalla de un celular (usando Flexbox 
+o CSS Grid).
+
+4. Entregables y Etapas de Evaluación
+
+Etapa 1 (Semana 1 - Análisis): 
+
+Entrega del DER y creación de las tablas en phpMyAdmin 
+con datos de prueba cargados.
+
+Etapa 2 (Semana 2 - Maquetado): Estructura HTML5
+
+y estilos CSS3 de las vistas principales (Login, 
+Muro de Apuntes, Formulario de Subida y Grupos de Estudio).
+
+Etapa 3 (Semanas 3 y 4 - Lógica y Conexión): 
+
+Programación de las consultas SQL (CRUD), manejo 
+de sesiones de usuario y validaciones con JavaScript.
+
+Etapa 4 (Semana 5 - Defensa):
+
+Demostración funcional en vivo frente al curso simulando 
+el uso real con distintos usuarios.
+
+5. Desafío Extra (Para sumar nota / Nivel Avanzado)
+
+Sistema de Reportes: Agregar un botón para que 
+los usuarios reporten un apunte si el archivo 
+está roto o no corresponde a la materia, y 
+crear una vista de Administrador para ocultarlo 
+o eliminarlo.
