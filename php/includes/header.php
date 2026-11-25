@@ -1,40 +1,41 @@
 <?php
 
-require_once __DIR__ . "/../includes/funciones.php";
-
-/**
- * @var string $rutas_menu_hamburguesa 
- * URLS that show in the hamburguer menu (default: void array)
- * @var string $ruta_redirigir_error
- * URL that redirect if the file is load in the url (default: 'index.php')
- * @var bool $mostrar_buscador
- * Show the search in the header (default: false)
- * @var bool $mostrar_filtro_materia
- * Shows the subject filter in the header (default: false)
- * @var bool $mostrar_icono_usuario
- * Shows user icon in the header (default: false)
- * 
- */
-
-$rutas_menu_hamburguesa = $rutas_menu_hamburguesa ?? [];
-$ruta_redirigir_error = $ruta_redirigir_error ?? "../../index.php";
-
-$mostrar_buscador = $mostrar_buscador ?? false;
-$mostrar_filtro_materia = $mostrar_filtro_materia ?? false;
-$mostrar_icono_usuario = $mostrar_icono_usuario ?? true;
+require_once __DIR__ . "/funciones.php";
 
 if (realpath($_SERVER['SCRIPT_FILENAME']) === __FILE__) { 
-    mensaje("Error","Acceso denegado",1,$ruta_redirigir_error);
+    mensaje("Error","Acceso denegado",1,"../../index.php");
 }
+
+/** @var array $header_rutas_menu_hamburguesa URLS that show in the hamburguer menu */
+$header_rutas_menu_hamburguesa = $rutas_menu_hamburguesa ?? [];
+
+/** @var bool $header_mostrar_buscador Show the search in the header */
+$header_mostrar_buscador = $mostrar_buscador ?? false;
+
+/** @var bool $header_mostrar_filtro_materia Shows the subject filter in the header */
+$header_mostrar_filtro_materia = $mostrar_filtro_materia ?? false;
+
+/** @var bool $header_mostrar_icono_usuario Shows user icon in the header */
+$header_mostrar_icono_usuario = $mostrar_icono_usuario ?? true;
 
 ?>
 <header class="contenedor-h">
     <section class="contenedor-h">
+        <?php if (!empty($header_rutas_menu_hamburguesa)) {
+            echo ' <button class="contenedor-v">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button> ';
+        } ?>
         <img src="assets/static/img/Logo AT.png" alt="Logo Apuntes Técnicos">
         <h1>Apuntes Técnicos</h1>
     </section>
-    <?php if ($mostrar_icono_usuario) { 
-        echo '<img src="assets/static/img/silueta-de-multiples-usuarios.png">'; 
+    <?php if (!empty($header_mostrar_buscador)) { 
+        echo '<img src="assets/static/img/silueta-de-multiples-usuarios.png" alt="Logo usuario">'; 
     } ?>
-    <img src="assets/" alt="">
 </header>
+
+<?php if (!empty($header_rutas_menu_hamburguesa)) {
+
+} ?>

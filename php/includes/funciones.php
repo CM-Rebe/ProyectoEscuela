@@ -2,6 +2,10 @@
 
 session_start();
 
+if (realpath($_SERVER['SCRIPT_FILENAME']) === __FILE__) { 
+    mensaje("Error","Acceso denegado",1,"../../index.php");
+}
+
 function conexion() {
     $host = 'localhost';
     $db = 'apuntes_tecncios';
@@ -26,7 +30,7 @@ function conexion() {
 }
 
 /**
- * Execute an sql consult
+ * Analyze and confirm the rules of your regex string
  * @param string $regex
  * An text that contains the rules of the string must respect
  * @param string $palabra
@@ -62,7 +66,7 @@ function ejecutar_consulta_sql(string $sql,array $parametros) {
  * @param int $tipo
  * Type of color pop-up: [1 (red)] [2 (yellow))] [3 (green)] [4 (blue)]
  */
-function mensaje(string $titulo,string $texto,int $tipo,string $url) {
+function mensaje(string $titulo,string $texto,int $tipo,string $url) : void {
     $_SESSION["mensaje"] = [
         "titulo" => $titulo,
         "texto" => $texto,
@@ -77,6 +81,6 @@ function mensaje(string $titulo,string $texto,int $tipo,string $url) {
  * @param string $cadena
  * The text to clear
  */
-function mostrar_texto_html(string $cadena) {
+function e(string $cadena) : string {
     return htmlspecialchars(trim($cadena));
 }
