@@ -1,4 +1,5 @@
-<?php 
+<?php define("ACCESS",true);
+
 require_once __DIR__ . "/php/includes/funciones.php";
 
 $comprobar_sesion_tipo = "persona-admin";
@@ -18,7 +19,10 @@ require __DIR__ . "/php/includes/header.php";
 
 
 <?php
+$pop_up_error_ruta_redirigir_mensaje = "index.php";
 require __DIR__ . "/php/includes/pop-up-error.php";
 
+$footer_ruta_enlace_iniciar_sesion = "html/logging/iniciar-sesion.php";
+$footer_ruta_enlace_crear_cuenta = "html/logging/crear-cuenta.php";
 require __DIR__ . "/php/includes/footer.php";
 ?>

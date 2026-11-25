@@ -1,12 +1,4 @@
-<?php
-
-require_once __DIR__ . "/funciones.php";
-
-if (realpath($_SERVER['SCRIPT_FILENAME']) === __FILE__) { 
-    mensaje("Error","Acceso denegado",1,"../../index.php");
-}
-
-$ruta_redirigir_error = $ruta_redirigir_error ?? "../../index.php";
+<?php require_once __DIR__ . "/funciones.php"; access();
 
 /** @var string $head_titulo_pagina The title of the page*/
 $head_titulo_pagina = $head_titulo_pagina ?? "";

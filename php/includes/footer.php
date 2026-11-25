@@ -1,17 +1,20 @@
-<?php
+<?php require_once __DIR__ . "/funciones.php"; access(); 
 
-require_once __DIR__ . "/funciones.php";
+/** @var string $footer_ruta_enlace_iniciar_sesion decide the link of the file "iniciar-sesion.php"*/
+$footer_ruta_enlace_iniciar_sesion = $footer_ruta_enlace_iniciar_sesion ?? "";
 
-if (realpath($_SERVER['SCRIPT_FILENAME']) === __FILE__) { 
-    mensaje("Error","Acceso denegado",1,"../../index.php");
-}
+/** @var string $footer_ruta_enlace_crear_cuenta decide the link of the file "crear-cuenta.php"*/
+$footer_ruta_enlace_crear_cuenta = $footer_ruta_enlace_crear_cuenta ?? "";
+
+/** @var string $footer_ruta_enlace_crear_cuenta decide the link of the file "crear-cuenta.php"*/
+$footer_ruta_enlace_cerrar_sesion = $footer_ruta_enlace_cerrar_sesion ?? "";
 
 ?>
 
 <footer class="contenedor-h justify-evenly wrap">
-    <article class="contenedor-c">
+    <section class="contenedor-c">
         <p>&copy; Apuntes Técnicos 2026. Todos los derechos reservados</p>
-    </article>
+    </section>
     <section class="contenedor-v">
         <p>Esta página está hecha por:</p>
         <article>
@@ -20,11 +23,14 @@ if (realpath($_SERVER['SCRIPT_FILENAME']) === __FILE__) {
         </article>
     </section>
     <section class="contenedor-v justify-evenly">
-        <a href="">Inicia Sesión</a>
-        <section class="contenedor-v">
-            <p>¿No tienes cuenta?</p>
-            <a href="">Crea una cuenta</a>
-        </section>
+        <?php if (!isset($_SESSION["usuario_id"])) {
+            echo '
+            <a href="'.e($footer_ruta_enlace_iniciar_sesion).'">Inicia Sesión</a>
+            <article class="contenedor-v">
+                <p>¿No tienes cuenta?</p>
+                <a href="'.e($footer_ruta_enlace_crear_cuenta).'">Crea una cuenta</a>
+            </article> ';
+        } else { echo '<a href="">Cerrar sesión</a>'; } ?>
     </section>
 </footer>
 

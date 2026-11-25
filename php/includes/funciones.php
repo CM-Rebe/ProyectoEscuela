@@ -1,10 +1,4 @@
-<?php
-
-session_start();
-
-if (realpath($_SERVER['SCRIPT_FILENAME']) === __FILE__) { 
-    mensaje("Error","Acceso denegado",1,"../../index.php");
-}
+<?php session_start(); access();
 
 function conexion() {
     $host = 'localhost';
@@ -83,4 +77,13 @@ function mensaje(string $titulo,string $texto,int $tipo,string $url) : void {
  */
 function e(string $cadena) : string {
     return htmlspecialchars(trim($cadena));
+}
+
+/**
+ * Verify the access of the file
+ */
+function access() : void {
+    if (!defined('ACCESS')) { 
+        mensaje("???","Virus ID: YIgio80LfoVIOvoBIOvoi",1,"../../index.php"); 
+    }
 }
