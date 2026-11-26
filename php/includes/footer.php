@@ -6,7 +6,7 @@ $footer_ruta_enlace_iniciar_sesion = $footer_ruta_enlace_iniciar_sesion ?? "";
 /** @var string $footer_ruta_enlace_crear_cuenta decide the link of the file "crear-cuenta.php"*/
 $footer_ruta_enlace_crear_cuenta = $footer_ruta_enlace_crear_cuenta ?? "";
 
-/** @var string $footer_ruta_enlace_crear_cuenta decide the link of the file "crear-cuenta.php"*/
+/** @var string $footer_ruta_enlace_cerrar_sesion decide the link of the file "cerrar-sesión.php"*/
 $footer_ruta_enlace_cerrar_sesion = $footer_ruta_enlace_cerrar_sesion ?? "";
 
 ?>
@@ -24,12 +24,16 @@ $footer_ruta_enlace_cerrar_sesion = $footer_ruta_enlace_cerrar_sesion ?? "";
     </section>
     <section class="contenedor-v justify-evenly">
         <?php if (!isset($_SESSION["usuario_id"])) {
-            echo '
-            <a href="'.e($footer_ruta_enlace_iniciar_sesion).'">Inicia Sesión</a>
-            <article class="contenedor-v">
-                <p>¿No tienes cuenta?</p>
-                <a href="'.e($footer_ruta_enlace_crear_cuenta).'">Crea una cuenta</a>
-            </article> ';
+            if (!empty($footer_ruta_enlace_iniciar_sesion)) {
+                echo '<a href="'.e($footer_ruta_enlace_iniciar_sesion).'">Inicia Sesión</a>';
+            }
+            if (!empty($footer_ruta_enlace_crear_cuenta)) {
+                echo '
+                <article class="contenedor-v">
+                    <p>¿No tienes cuenta?</p>
+                    <a href="'.e($footer_ruta_enlace_crear_cuenta).'">Crea una cuenta</a>
+                </article> ';
+            }
         } else { echo '<a href="">Cerrar sesión</a>'; } ?>
     </section>
 </footer>

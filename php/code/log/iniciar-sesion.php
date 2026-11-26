@@ -1,4 +1,4 @@
-<?php
+<?php define("ACCESS",true);
 
 require_once __DIR__ . "/../../includes/funciones.php";
 

@@ -18,7 +18,7 @@ $head_rutas_de_archivos_css = $head_rutas_de_archivos_css ?? [];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= e($head_titulo_pagina) ?> | Apuntes Técnicos</title>
 
-    <?php if (!empty($head_ruta_base)) { echo '<base href="<?= '.e($head_ruta_base).' ?>">'; } ?>
+    <?php if (!empty($head_ruta_base)) { echo '<base href="'.e($head_ruta_base).'">'; } ?>
 
     <link rel="shortcut icon" href="assets/static/img/Logo AT.png" type="image/x-icon">
 

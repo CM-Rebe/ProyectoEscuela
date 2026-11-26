@@ -10,7 +10,11 @@ $head_ruta_base = "";
 $head_rutas_de_archivos_css = [];
 require __DIR__ . "/php/includes/head.php";
 
-$header_rutas_menu_hamburguesa = [];
+$header_rutas_menu_hamburguesa = [
+    ["nombre" => "Inicio", "habilitada" => false,"direccion" => ""],
+    ["nombre" => "Crea una Cuenta", "habilitada" => true,"direccion" => "html/logging/crear-cuenta.php"],
+    ["nombre" => "Inicia Sesión", "habilitada" => true,"direccion" => "html/logging/iniciar-sesion.php"],
+];
 $header_mostrar_buscador = false;
 $header_mostrar_filtro_materia = false;
 $header_mostrar_icono_usuario = false;
@@ -24,5 +28,6 @@ require __DIR__ . "/php/includes/pop-up-error.php";
 
 $footer_ruta_enlace_iniciar_sesion = "html/logging/iniciar-sesion.php";
 $footer_ruta_enlace_crear_cuenta = "html/logging/crear-cuenta.php";
+$footer_ruta_enlace_cerrar_sesion = "html/logging/cerrar-sesion.php";
 require __DIR__ . "/php/includes/footer.php";
 ?>
