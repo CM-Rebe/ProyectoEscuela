@@ -8,17 +8,11 @@ $curso = $_POST["curso"] ?? mensaje("Error:","Falta completar el curso",2,"../..
 $email = $_POST["email"] ?? mensaje("Error:","Falta completar el email",2,"../../../html/");
 $clave = $_POST["clave"] ?? mensaje("Error:","Falta completar la clave",2,"../../../html/");
 
-function comprobar_datos(string $regex, $dato, string $campo) {
-    if (empty($dato) || regex_cadena($regex,$dato)) {
-        mensaje("Error:","Los datos del ".$campo." no cumplen con el formato solicitado",2,"");
-    }
-}
-
-comprobar_datos("[a-zA-Z0-9_-]{4,50}",$nombre,"nombre");
-comprobar_datos("[a-zA-Z0-9_-]{4,50}",$apellido,"apellido");
-comprobar_datos("[0-9][a-zA-Z0-9°_-* ]{1,3}[0-9][a-zA-Z°_-*]{0,3}",$curso,"curso");
-comprobar_datos("[a-zA-Z0-9_-]{4,50}@[a-zA-Z0-9]{1,50}.com(.ar){0,1}",$email,"email");
-comprobar_datos("[a-zA-Z0-9.,_-]{4,50}",$clave,"clave");
+comprobar_datos(empty($nombre) || regex_cadena("[a-zA-Z0-9_-.,]{4,50}",$nombre),["Error:","Los datos del nombre no cumplen con el formato solicitado",2,"html/logging/crear-cuenta.php"]);
+comprobar_datos(empty($apellido) || regex_cadena("[a-zA-Z0-9_-.,]{4,50}",$apellido),["Error:","Los datos del apellido no cumplen con el formato solicitado",2,"html/logging/crear-cuenta.php"]);
+comprobar_datos(empty($curso) || regex_cadena("[0-9][a-zA-Z0-9°_-*]{1,3}[0-9][a-zA-Z°_-*]{0,3}",$curso),["Error:","Los datos del curso no cumplen con el formato solicitado",2,"html/logging/crear-cuenta.php"]);
+comprobar_datos(empty($email) || regex_cadena("[a-zA-Z0-9_-.,]{4,50}@[a-zA-Z0-9]{1,50}.com(.ar){0,1}",$email),["Error:","Los datos del email no cumplen con el formato solicitado",2,"html/logging/crear-cuenta.php"]);
+comprobar_datos(empty($clave) || regex_cadena("[a-zA-Z0-9_-.,]{4,50}",$clave),["Error:","Los datos del nombre no cumplen con el formato solicitado",2,"html/logging/crear-cuenta.php"]);
 
 $stmt = ejecutar_consulta_sql("SELECT usuario_id FROM usuarios
 WHERE email = ?", [$email]) 

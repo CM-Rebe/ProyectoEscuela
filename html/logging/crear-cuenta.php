@@ -21,6 +21,87 @@ $header_mostrar_icono_usuario = false;
 require __DIR__ . "/../../php/includes/header.php";
 ?>
 
+<?php 
+$form_ruta_accion = "php/code/log/crear-cuenta.php";
+$form_titulo = "Crear cuenta";
+$form_datos = [
+    [
+        "label" => ["name" => "Nombre","for" => "nombre"],
+        "campo" => [
+            "campo_tipo" => "input",
+            "id" => "nombre",
+            "name" => "nombre",
+            "type" => "text",
+            "placeholder" => "Ingrese el nombre",
+            "required" => "required",
+            "autocomplete" => "name",
+            "minlenght" => 4,
+            "maxlenght" => 50,
+        ],
+    ],
+    [
+        "label" => ["name" => "Apellido","for" => "apellido"],
+        "campo" => [
+            "campo_tipo" => "input",
+            "id" => "apellido",
+            "name" => "apellido",
+            "type" => "text",
+            "placeholder" => "Ingrese su apellido",
+            "required" => "required",
+            "autocomplete" => "additional-name",
+            "minlenght" => 4,
+            "maxlenght" => 50,
+        ],
+    ],
+    [
+        "label" => ["name" => "Curso", "for" => "curso"],
+        "campo" => [
+            "campo_tipo" => "input",
+            "id" => "curso",
+            "name" => "curso",
+            "type" => "text",
+            "placeholder" => "Ingrese su curso",
+            "required" => "required",
+            "autocomplete" => "off",
+            "minlenght" => 4,
+            "maxlenght" => 10,
+        ],
+    ],
+    [
+        "label" => ["name" => "Email", "for" => "email"],
+        "campo" => [
+            "campo_tipo" => "input",
+            "id" => "email",
+            "name" => "email",
+            "type" => "email",
+            "placeholder" => "Ingrese su email",
+            "required" => "required",
+            "autocomplete" => "email",
+            "minlenght" => 4,
+            "maxlenght" => 50,
+        ],
+    ],
+    [
+        "label" => ["name" => "Contraseña", "for" => "clave"],
+        "campo" => [
+            "campo_tipo" => "input",
+            "id" => "clave",
+            "name" => "clave",
+            "type" => "password",
+            "placeholder" => "Ingrese su contraseña",
+            "required" => "required",
+            "autocomplete" => "new-password",
+            "minlenght" => 4,
+            "maxlenght" => 50,
+        ],
+    ],
+];
+$form_nombre_boton_submit = "Crear Cuenta";
+$form_boton_volver = ["nombre" => "Volver", "ruta" => "index.php",];
+require_once __DIR__ . "/../../php/includes/formulario.php";
+
+?>
+
 <?php
 $pop_up_error_ruta_redirigir_mensaje = "html/logging/crear-cuenta.php";
 require __DIR__ . "/../../php/includes/pop-up-error.php";
