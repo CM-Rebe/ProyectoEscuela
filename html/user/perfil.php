@@ -3,6 +3,7 @@
 require_once __DIR__ . "/../../php/includes/funciones.php";
 
 $comprobar_sesion_tipo = "guest";
+$comprobar_sesion_ruta_base = "../../";
 require_once __DIR__ . "/../../php/code/log/comprobar-sesion.php";
 
 $head_titulo_pagina = "Mi Perfil";
@@ -12,11 +13,11 @@ require __DIR__ . "/../../php/includes/head.php";
 
 $header_rutas_menu_hamburguesa = [
     ["nombre" => "Inicio", "habilitada" => true,"direccion" => "html/user/principal.php"],
-    ["nombre" => "Perfil", "habilitada" => false, "direccion" => ""],
+    ["nombre" => "Perfil", "habilitada" => false, "direccion" => "html/user/perfil.php"],
     ["nombre" => "Apuntes", "habilitada" => true, "direccion" => "html/user/apuntes.php"],
-    ["nombre" => "Grupos Estudio", "habilitada" => true, "direccion" => "html/user/gupos-estudio.php"],
-    ["nombre" => "Ranking", "habilitada" => false, "direccion" => "html/user/ranking.php"],
-    ["nombre" => "Mis apuntes", "habilitada" => true, "direccion" => "html/user/crud-apuntes/ver-mis-apuntes.php"],
+    ["nombre" => "Grupos Estudio", "habilitada" => true, "direccion" => "html/user/grupos-estudio.php"],
+    ["nombre" => "Ranking", "habilitada" => true, "direccion" => "html/user/ranking.php"],
+    ["nombre" => "Mis apuntes", "habilitada" => true, "direccion" => "html/user/curd-apuntes/ver-mis-apuntes.php"],
     ["nombre" => "Mis grupos de estudio", "habilitada" => true, "direccion" =>"html/user/crud-grupos-estudio/ver-mis-grupos-estudio.php"],
 ];
 $header_mostrar_buscador = false;

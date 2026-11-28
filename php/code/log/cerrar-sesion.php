@@ -1,9 +1,5 @@
-<?php
+<?php define("ACCESS",true);
 
-session_start();
-
-$_SESSION = [];
-
-session_destroy();
-
+require_once __DIR__ . "/../../includes/funciones.php";
+session_start(); $_SESSION = [];
 mensaje("Éxito:","Sesión cerrada correctamente",3,"../../../index.php");

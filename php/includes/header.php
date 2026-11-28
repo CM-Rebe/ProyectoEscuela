@@ -28,10 +28,7 @@ $header_mostrar_icono_usuario = $header_mostrar_icono_usuario ?? false;
         <h1>Apuntes Técnicos</h1>
     </section>
     <?php if ($header_mostrar_icono_usuario) { 
-        echo '<img src="assets/static/img/silueta-de-multiples-usuarios.png" alt="Logo usuario">'; 
-    } ?>
-    <?php if ($header_mostrar_icono_usuario) { 
-        echo '<img src="assets/static/img/silueta-de-multiples-usuarios.png" alt="Logo usuario">'; 
+        echo '<img src="assets/static/img/silueta-de-usuarios.png" alt="Logo usuario">'; 
     } ?>
 </header>
 <aside class="contenedor-v">
@@ -44,3 +41,8 @@ $header_mostrar_icono_usuario = $header_mostrar_icono_usuario ?? false;
         }
     }?>
 </aside>
+<nav>
+    <?php if ($header_mostrar_buscador) {
+        
+    } ?>
+</nav>

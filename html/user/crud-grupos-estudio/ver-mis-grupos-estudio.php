@@ -3,6 +3,7 @@
 require_once __DIR__ . "/../../../php/includes/funciones.php";
 
 $comprobar_sesion_tipo = "guest";
+$comprobar_sesion_ruta_base = "../../../";
 require_once __DIR__ . "/../../../php/code/log/comprobar-sesion.php";
 
 $head_titulo_pagina = "Mis Grupos";
@@ -11,13 +12,16 @@ $head_rutas_de_archivos_css = [];
 require __DIR__ . "/../../../php/includes/head.php";
 
 $header_rutas_menu_hamburguesa = [
-    ["nombre" => "Inicio", "habilitada" => true,"direccion" => "html/user/principal.php"],
+    ["nombre" => "Inicio", "habilitada" => false,"direccion" => "html/user/principal.php"],
     ["nombre" => "Perfil", "habilitada" => true, "direccion" => "html/user/perfil.php"],
     ["nombre" => "Apuntes", "habilitada" => true, "direccion" => "html/user/apuntes.php"],
-    ["nombre" => "Grupos Estudio", "habilitada" => true, "direccion" => "html/user/gupos-estudio.php"],
+    ["nombre" => "Grupos Estudio", "habilitada" => true, "direccion" => "html/user/grupos-estudio.php"],
     ["nombre" => "Ranking", "habilitada" => true, "direccion" => "html/user/ranking.php"],
-    ["nombre" => "Mis apuntes", "habilitada" => true, "direccion" => "html/user/crud-apuntes/ver-mis-apuntes.php"],
-    ["nombre" => "Mis grupos de estudio", "habilitada" => false, "direccion" =>""],
+    ["nombre" => "Mis apuntes", "habilitada" => true, "direccion" => "html/user/curd-apuntes/ver-mis-apuntes.php"],
+    ["nombre" => "Mis grupos de estudio", "habilitada" => false, "direccion" =>"html/user/crud-grupos-estudio/ver-mis-grupos-estudio.php"],
+    ["nombre" => "Crear grupos de estudio", "habilitada" => true, "direccion" =>"html/user/crud-grupos-estudio/crear-mis-grupos-estudio.php"],
+    ["nombre" => "Editar grupos de estudio", "habilitada" => true, "direccion" =>"html/user/crud-grupos-estudio/editar-mis-grupos-estudio.php"],
+    ["nombre" => "Eliminar grupos de estudio", "habilitada" => true, "direccion" =>"html/user/crud-grupos-estudio/eliminar-mis-grupos-estudio.php"],
 ];
 $header_mostrar_buscador = true;
 $header_mostrar_filtro_materia = true;

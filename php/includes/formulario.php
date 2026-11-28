@@ -44,7 +44,7 @@ $form_titulo = $form_titulo ?? "";
  * - "class" => string
  * - "name" => string
  * - "required" => string ("required" o "")
- * - "opciones" => string
+ * - "opciones" => array
  */
 
 $form_datos = $form_datos ?? [

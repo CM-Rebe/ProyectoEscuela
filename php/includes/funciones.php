@@ -2,7 +2,7 @@
 
 function conexion() {
     $host = 'localhost';
-    $db = 'apuntes_tecncios';
+    $db = 'apuntes_tecnicos';
     $user = 'root';
     $pass = '';
     $charset = 'utf8mb4';
@@ -43,7 +43,7 @@ function regex_cadena(string $regex,string $palabra) : bool {
  */
 function ejecutar_consulta_sql(string $sql,array $parametros) {
     try {
-        $pdo = conexion();
+        $pdo = conexion() ?? "";
 
         $stmt = $pdo->prepare($sql);
         $stmt->execute($parametros);
@@ -116,7 +116,7 @@ function crear_campo_formulario(array $label, array $campo) : void {
         id="'.e($label["id"] ?? "").'"
         class="'.e($label["class"] ?? "").'" 
         for="'.e($label["for"] ?? "").'"
-    >'.e($label["name"] ?? "El label no tiene nombre").'
+    >'.e($label["name"] ?? "").'
     </label>';
     
     switch ($campo["campo_tipo"] ?? "") {
@@ -127,11 +127,14 @@ function crear_campo_formulario(array $label, array $campo) : void {
                     class="'.e($campo["class"] ?? "").'" 
                     name="'.e($campo["name"] ?? "").'" 
                     type="'.e($campo["type"] ?? "text").'" 
+                    value="'.e($campo["value"] ?? "").'"
                     placeholder="'.e($campo["placeholder"] ?? "").'" 
                     autocomplete="'.e($campo["autocomplete"] ?? "").'"
                     '.e($campo["required"] ?? "").'
                     minlenght="'.e($campo["minlenght"] ?? "").'"
                     maxlenght="'.e($campo["maxlenght"] ?? "").'"
+                    min="'.e($campo["min"] ?? "").'"
+                    max="'.e($campo["max"] ?? "").'"
                 >
             ';
         break;
@@ -159,9 +162,9 @@ function crear_campo_formulario(array $label, array $campo) : void {
                 >
                     <option value="">Selecciona una materia</option>';
 
-                foreach (($campo["opciones"] ?? []) as $i => $texto) {
+                foreach (($campo["opciones"] ?? []) as $texto) {
                     echo '
-                        <option value="'.e($i ?? "").'">'.e($texto ?? "").'</option>';
+                        <option value="'.e($texto["materias_id"] ?? "").'">'.e($texto["nombre"] ?? "").'</option>';
                 }
 
             echo '

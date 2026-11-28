@@ -23,7 +23,7 @@ $footer_ruta_enlace_cerrar_sesion = $footer_ruta_enlace_cerrar_sesion ?? "";
         </article>
     </section>
     <section class="contenedor-v justify-evenly">
-        <?php if (!isset($_SESSION["usuario_id"])) {
+        <?php if (!isset($_SESSION["usuarios_id"])) {
             if (!empty($footer_ruta_enlace_iniciar_sesion)) {
                 echo '<a href="'.e($footer_ruta_enlace_iniciar_sesion).'">Inicia Sesión</a>';
             }
@@ -34,7 +34,7 @@ $footer_ruta_enlace_cerrar_sesion = $footer_ruta_enlace_cerrar_sesion ?? "";
                     <a href="'.e($footer_ruta_enlace_crear_cuenta).'">Crea una cuenta</a>
                 </article> ';
             }
-        } else { echo '<a href="">Cerrar sesión</a>'; } ?>
+        } else { echo '<a href="'.e($footer_ruta_enlace_cerrar_sesion).'">Cerrar sesión</a>'; } ?>
     </section>
 </footer>
 

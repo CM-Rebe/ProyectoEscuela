@@ -3,6 +3,7 @@
 require_once __DIR__ . "/../../php/includes/funciones.php";
 
 $comprobar_sesion_tipo = "persona-admin";
+$comprobar_sesion_ruta_base = "../../";
 require_once __DIR__ . "/../../php/code/log/comprobar-sesion.php";
 
 $head_titulo_pagina = "Crear Cuenta";
