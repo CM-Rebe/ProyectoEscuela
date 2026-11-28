@@ -57,16 +57,6 @@ $form_datos = [
         ],
     ],
     [
-        "campo" => [
-            "campo_tipo" => "input",
-            "id" => "usuarios_id",
-            "name" => "usuarios_id",
-            "type" => "hidden",
-            "required" => "required",
-            "value" => $_SESSION["usuarios_id"] ?? "",
-        ],
-    ],
-    [
         "label" => ["name" => "Tema a repasar", "for" => "tema_repasar"],
         "campo" => [
             "campo_tipo" => "input",
