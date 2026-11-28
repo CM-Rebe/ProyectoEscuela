@@ -12,7 +12,7 @@ $head_rutas_de_archivos_css = [];
 require __DIR__ . "/../../../php/includes/head.php";
 
 $header_rutas_menu_hamburguesa = [
-    ["nombre" => "Inicio", "habilitada" => false,"direccion" => "html/user/principal.php"],
+    ["nombre" => "Inicio", "habilitada" => true,"direccion" => "html/user/principal.php"],
     ["nombre" => "Perfil", "habilitada" => true, "direccion" => "html/user/perfil.php"],
     ["nombre" => "Apuntes", "habilitada" => true, "direccion" => "html/user/apuntes.php"],
     ["nombre" => "Grupos Estudio", "habilitada" => true, "direccion" => "html/user/grupos-estudio.php"],
